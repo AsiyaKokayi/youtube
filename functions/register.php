@@ -18,9 +18,13 @@ function register(){
     query("Insert into profile (username, password, firstname) "
             . "values ('$username','$password','$firstname')");
     $Login_ID= $getLogin_ID['Login_ID'];
-    query("Insert into securityquestions"
-            . "(Login_ID, question1, question2, question3, "
-            . "answer1, answer2, answer3)");
+    query("Insert into securityquestions(Login_ID, question1,answer1)"
+            . "values ('$Login_ID', '$question1','$answer1')");
+    
+     query("Insert into securityquestions(Login_ID, question2, answer2,)"
+            . "values ('$Login_ID', '$question2','$answer2')");
+     query("Insert into securityquestions(Login_ID,question3, answer3)"
+            . "values ('$Login_ID','$question3','$answer3')");
     
 }
 
